@@ -572,7 +572,7 @@ if not is_sudo(msg) and not redis:get(boss..'lock_service') then return '🚸¦ 
 if msg.to.type ~= "channel" then return '🚸¦ لا يمكنك تفعيل البوت في المجوعات العاديه / البوت يدعم فقط المجموعات الخارقه ⚙️' end
 if redis:get(boss..'group:add'..msg.to.id) then  return '🎗*¦* المجموعه بالتأكيد ✓️ تم تفعيلها' end
 if not we_sudo(msg) then
-local channel = 'معرف قناتك'
+local channel = 'vpsbots'
 local tokenbot = 'توكن بوتك'
 local url , res = https.request('https://api.telegram.org/bot'..tokenbot..'/getchatmember?chat_id='..channel..'&user_id='..msg.from.id)
 data = JSON.decode(url)
